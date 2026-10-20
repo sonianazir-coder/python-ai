@@ -66,4 +66,4 @@ shows an AI prompt when it cannot answer a question.
 ### How to Run
 
 ```bash
-uv run code/lesson_08_mini_chatbot.py
+uv run code/lesson_08_mini_chatbot.p

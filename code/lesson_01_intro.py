@@ -1,5 +1,5 @@
-name = "Sonia Nazir"
-goal = "AI Agent Developer"
+name = "Sonia Nazir" 
+goal = "AI Agent Developer" 
 problem = "Small businesses spend too much time handling customer orders manually"
 
 reason = "I want to help businesses save time by building AI agents."
