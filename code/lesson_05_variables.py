@@ -1,31 +1,26 @@
-"""Lesson 1.5: Create an AI Model Profile Card."""
+"""Lesson 1.5: AI Model Profile Card with cost estimation."""
 
-# Store the model's basic information in variables.
-model_name = "gemma3:1b"
-context_window = 32768
-price_per_1k_tokens = 0.5
+# Store the model details using four different Python data types.
+model_name = "llama3.2"
+context_window_tokens = 128000
+price_per_1k_tokens_pkr = 0.50
 runs_locally = True
 
-# Clear variable names make the model configuration easier to understand.
+# Why: The profile helps a user compare the model's basic information.
 print("--- AI Model Profile Card ---")
+print(f"Model: {model_name} {type(model_name)}")
+print(f"Context window: {context_window_tokens} tokens {type(context_window_tokens)}")
+print(f"Price per 1K tokens: {price_per_1k_tokens_pkr} PKR {type(price_per_1k_tokens_pkr)}")
+print(f"Runs locally: {runs_locally} {type(runs_locally)}")
 
-print(f"Model Name: {model_name} | Type: {type(model_name)}")
-print(f"Context Window: {context_window} | Type: {type(context_window)}")
-print(f"Price per 1K Tokens: {price_per_1k_tokens} | Type: {type(price_per_1k_tokens)}")
-print(f"Runs Locally: {runs_locally} | Type: {type(runs_locally)}")
+# Why: int() converts the entered token count into a whole number.
+tokens_per_chat = int(input("Tokens per chat: "))
 
-# input() returns text, so int() converts the token count into a number.
-tokens_used = int(input("\nHow many tokens does your chat use? "))
+estimated_cost = (tokens_per_chat / 1000) * price_per_1k_tokens_pkr
+print(f"Estimated cost: {round(estimated_cost, 2)} PKR")
 
-# This is an example price for practice, not the real price of Gemma.
-cost = (tokens_used / 1000) * price_per_1k_tokens
+# Stretch: Estimate the monthly cost for 30 days.
+chats_per_day = int(input("Chats per day: "))
+monthly_cost = estimated_cost * chats_per_day * 30
 
-print(f"Estimated Cost: {round(cost, 2)} PKR")
-
-# Ask for daily chats to estimate the cost over 30 days.
-chats_per_day = int(input("\nHow many chats do you use per day? "))
-
-monthly_tokens = tokens_used * chats_per_day * 30
-monthly_cost = (monthly_tokens / 1000) * price_per_1k_tokens
-
-print(f"Estimated Monthly Cost: {round(monthly_cost, 2)} PKR")0
+print(f"Estimated monthly cost: {round(monthly_cost, 2)} PKR")
