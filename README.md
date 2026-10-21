@@ -66,4 +66,54 @@ shows an AI prompt when it cannot answer a question.
 ### How to Run
 
 ```bash
-uv run code/lesson_08_mini_chatbot.p
+uv run code/lesson_08_mini_chatbot.py
+
+## Lesson 1.8: Business Helper Bot
+
+### Intent Design Table
+
+| User Intent             | Keywords                              | Reply                                         |
+| ----------------------- | ------------------------------------- | --------------------------------------------- |
+| Complaint or human help | complaint, refund, late, human, agent | Apologize and connect the customer to a human |
+| Opening hours           | hour, timing, open                    | Show the opening hours                        |
+| Prices                  | price, cost, how much, fee            | Display example product prices                |
+| Location                | where, location, address              | Provide the example business address          |
+| Ordering                | order, delivery                       | Explain how to place an order                 |
+| Greeting                | hi, hello, salam                      | Greet the user by name                        |
+| Exit                    | bye, exit                             | Say goodbye and show the chat summary         |
+| Other questions         | No matching keyword                   | Display an AI prompt for a future response    |
+
+### Project Description
+
+This project is a rule-based chatbot for Sweet Crumbs Bakery. It answers common questions about opening hours, prices, location, and ordering. It also identifies complaints, counts unanswered questions, and displays an example prompt for an AI model.
+
+### Python Concepts Used
+
+* Variables and strings
+* Input and output
+* String methods
+* Conditional statements
+* `while` loop and `break`
+* Counters
+* F-strings
+
+### How to Run
+
+```bash
+uv run code/lesson_08_mini_chatbot.py
+```
+
+### Testing
+
+| Test Input                 | Expected Result                 |
+| -------------------------- | ------------------------------- |
+| `What are your HOURS?`     | Opening hours                   |
+| `   how much is a cake   ` | Cake prices                     |
+| `my order is late`         | Human handover                  |
+| `which cake is best?`      | Fallback response and AI prompt |
+| Empty input                | Please type a question          |
+| `BYE`                      | Goodbye and chat summary        |
+
+### Limitations
+
+The chatbot uses predefined rules and cannot answer every question. In Module 2, it can be connected to an AI model to answer questions that its rules cannot handle.
