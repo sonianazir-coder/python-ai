@@ -1,39 +1,35 @@
-"""Lesson 1.7: Choose an AI model using conditions and estimate cost."""
+"""Lesson 1.7: Choose an AI model based on the task."""
 
-# Ask for the task type and clean the text to handle different capital letters.
-task = input("Task (code / private / chat): ").strip().lower()
+# Ask the user for the task and clean the input.
+task_type = input("Task (code / private / chat): ").strip().lower()
+estimated_tokens = int(input("Estimated tokens: "))
 
-# Convert the token input to an integer so Python can compare it with numbers.
-tokens = int(input("Estimated tokens: "))
+# Why: Different tasks may need different models.
+if task_type == "code":
+    model_name = "claude (cloud, strong at code)"
+    price = 0.80
 
-# Local models keep private data on the laptop, so their example cost is zero.
-if task == "private":
-    model = "gemma3:1b (local, Ollama)"
-    price_per_1k_tokens = 0.0
-elif task == "code":
-    model = "Claude (cloud)"
-    price_per_1k_tokens = 2.0
-elif task == "chat":
-    model = "Small cloud model"
-    price_per_1k_tokens = 0.5
+elif task_type == "private":
+    model_name = "llama3.2 (local, Ollama)"
+    price = 0.0
+
 else:
-    model = "Unknown task"
-    price_per_1k_tokens = 0.0
+    model_name = "cheap chat model (cloud)"
+    price = 0.20
 
-# Long requests may need to be shortened before sending them to a model.
-if tokens > 4000:
-    warning = "Long request: consider shortening it."
+# Why: Long requests may need shortening before sending.
+if estimated_tokens > 4000:
+    print("Warning: long request, consider shortening it.")
 else:
-    warning = "Length is fine."
+    print("Length is fine.")
 
-# Calculate an example cost using the selected model's practice price.
-cost = tokens / 1000 * price_per_1k_tokens
+estimated_cost = (estimated_tokens / 1000) * price
 
-print("\n" + "=" * 40)
-print("SMART MODEL ROUTER")
-print("=" * 40)
-print(f"Task: {task}")
-print(f"Chosen model: {model}")
-print(warning)
-print(f"Estimated cost: {cost:.2f} PKR")
-print("=" * 40)
+print(f"Chosen model: {model_name}")
+print(f"Estimated cost: {estimated_cost:.2f} PKR")
+
+# Stretch: Check whether a free user needs to upgrade.
+paid_user = input("Is this a paid user? (yes/no): ").strip().lower()
+
+if paid_user == "no" and estimated_tokens > 2000:
+    print("Upgrade to send long requests.")
