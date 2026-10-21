@@ -117,3 +117,31 @@ uv run code/lesson_08_mini_chatbot.py
 ### Limitations
 
 The chatbot uses predefined rules and cannot answer every question. In Module 2, it can be connected to an AI model to answer questions that its rules cannot handle.
+
+## Module 1 Checkpoint 2: AI Front Desk
+
+The AI Front Desk is a Python chatbot for Sweet Crumbs Bakery. It answers common customer questions, calculates order quotes, handles complaints, and prepares prompts for AI testing.
+
+### Features
+
+* Answers frequently asked questions.
+* Calculates order prices, discounts, and delivery fees.
+* Handles customer complaints.
+* Prepares prompts for unknown questions.
+* Estimates AI token usage and cost.
+* Displays a session report.
+
+### How to Run
+
+Run this command from the project root directory:
+
+`uv run code/project_m1_front_desk.py`
+
+### Screenshot
+
+![AI Front Desk Run](docs/project-m1-part2-run.png)
+
+### Business Benefit
+
+The chatbot can save staff time by answering common questions and reduce pricing mistakes by calculating order totals consistently.
+
