@@ -145,3 +145,12 @@ Run this command from the project root directory:
 
 The chatbot can save staff time by answering common questions and reduce pricing mistakes by calculating order totals consistently.
 
+
+## Module 2 Checkpoint 1: AI Content Studio
+
+An AI-powered content studio for a local bakery. It creates menu descriptions, generates social media posts, answers prices using business data, and chats with customers.
+
+### Run the Project
+
+```bash
+uv run code/project_m2_content_studio.py
