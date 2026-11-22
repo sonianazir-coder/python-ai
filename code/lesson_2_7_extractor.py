@@ -33,7 +33,6 @@ MESSAGES = [
 
     "Mujhe 3 brownies chahiye. Mera naam Ahmed hai, address DHA Lahore.",
 
-    "Please send 2 cupcakes to Lahore.",
 ]
 
 
