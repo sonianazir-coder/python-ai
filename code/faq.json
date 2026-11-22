@@ -1,0 +1,20 @@
+{
+    "business_name": "Sweet Crumbs Bakery",
+    "business_type": "Bakery",
+    "location": "Lahore, Pakistan",
+    "delivery": "Free delivery for orders over 3000 PKR.",
+    "delivery_time": "Delivery usually takes 30 to 60 minutes.",
+    "opening_hours": "Monday to Saturday, 9 AM to 10 PM.",
+    "payment_methods": [
+        "Cash",
+        "Bank Transfer",
+        "Online Payment"
+    ],
+    "prices": {
+        "cupcake": 250,
+        "chocolate_cake": 1500,
+        "brownie": 300,
+        "cookies": 200,
+        "vanilla_cake": 1200
+    }
+}
